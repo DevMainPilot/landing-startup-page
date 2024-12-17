@@ -1,15 +1,16 @@
-Landing Page Example with Next.js 15
+# Landing Page Example with Next.js 15
+
 This repository contains an example of a landing page built with Next.jsversion 15. The purpose of this project is to showcase the upcoming official website of our software development startup.
 
-Project Overview
+##Project Overview
 We are a team of enthusiastic entrepreneurs specializing in both backend and frontend software development. Our goal is to deliver innovative, custom-tailored digital solutions to meet the unique needs of our clients.
 
-Technologies Used
+##Technologies Used
 Next.js15: A popular React framework that enables server-side rendering and static site generation.
 
 shadcn/ui: A set of beautifully designed and reusable UI components that enhance the visual appeal and functionality of our landing page.
 
-Features
+##Features
 Responsive Design: The landing page is optimized for various devices, ensuring a seamless user experience across desktops, tablets, and mobile devices.
 
 Custom Components: We have implemented custom components that highlight our expertise in AI, predictive solutions, ERP systems, and more.
