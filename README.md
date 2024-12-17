@@ -19,6 +19,7 @@ Smooth Navigation: The landing page includes a carousel and other interactive el
 
 ![image](https://github.com/user-attachments/assets/1b909942-9b59-4c85-8ce6-be0ca742a0c1)
 ![image](https://github.com/user-attachments/assets/9548653f-c4d4-437a-8efa-32e6b2f1d7ad)
+![image](https://github.com/user-attachments/assets/3b28cf56-7f13-47b5-9d31-6d2bd39829d6)
 
 
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
