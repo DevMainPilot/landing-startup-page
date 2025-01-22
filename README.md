@@ -58,3 +58,35 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+
+
+
+# Docker
+
+## Create and run a local image docker
+
+```bash
+
+docker build -t image-ui .
+
+docker run -p 3000:3000 image-ui
+
+```
+
+# Deploy Next.js to Google Cloud Run
+
+This is a Next.js template which can be deployed to [Google Cloud Run](https://cloud.google.com/run/docs).
+
+## Deploying to Google Cloud Run
+
+This template can be used to deploy your Next.js application as a Docker container.
+
+1. Install the [Google Cloud SDK](https://cloud.google.com/sdk/docs/install) so you can use `gcloud` on the command line.
+1. Run `gcloud auth login` to log in to your account.
+1. [Create a new project](https://cloud.google.com/run/docs/quickstarts/build-and-deploy) in Google Cloud Run (e.g. `nextjs-docker`). Ensure billing is turned on.
+1. Deploy to Cloud Run: `gcloud run deploy helloworld --source=. --project=PROJECT-ID --region=us-central1 --allow-unauthenticated`.
+
+   - You must replace `PROJECT-ID` with your Google Cloud Project ID.
+   - You may replace `us-central1` with a different Google Cloud [region](https://cloud.google.com/run/docs/locations).
+
+For more information, see the Next.js [deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying#self-hosting).
