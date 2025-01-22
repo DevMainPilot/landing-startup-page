@@ -1,10 +1,8 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist, Azeret_Mono as Geist_Mono } from 'next/font/google';
 import "./globals.css";
 import React from "react";
 import Link from "next/link";
-import Image from "next/image";
-import { Icons } from "@/components/icons";
 import { cn } from "@/lib/utils";
 import styles from "./page.module.css";
 import { Logo } from "@/components/ui/logo";
@@ -12,56 +10,39 @@ import { Logo } from "@/components/ui/logo";
 import {
   NavigationMenu,
   NavigationMenuContent,
-  NavigationMenuIndicator,
   NavigationMenuItem,
   NavigationMenuLink,
   NavigationMenuList,
   NavigationMenuTrigger,
-  NavigationMenuViewport,
 } from "@/components/ui/navigation-menu";
 
 import { navigationMenuTriggerStyle } from "@/components/ui/navigation-menu";
 
-const links = [
-  { name: "Home", href: "/" },
-  { name: "about", href: "/about" },
-];
-
 const components: { title: string; href: string; description: string }[] = [
   {
-    title: "Feature 1",
+    title: "Application Development",
     href: "/",
-    description:
-      "Feature content.",
+    description: "Under Construction.",
   },
   {
-    title: "Auth secute appa",
+    title: "Auth secure app solutions",
     href: "/",
-    description:
-      "For.",
+    description: "Under Construction.",
   },
   {
-    title: "Progress and maintance",
+    title: "Progress and maintenance",
     href: "/",
-    description:
-      "Displays an indicators task.",
+    description: "Under Construction.",
   },
   {
-    title: "Service 1",
-    href: "/d",
-    description: "Visually content.",
+    title: "Prompt Engineering",
+    href: "/",
+    description: "Under Construction.",
   },
   {
     title: "Cloud solutions",
     href: "/",
-    description:
-      "Cloud.",
-  },
-  {
-    title: "Service 2",
-    href: "/",
-    description:
-      "Custom AI solutions.",
+    description: "Under Construction.",
   },
 ];
 
@@ -76,7 +57,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Create Next App",
+  title: "Kabots Software Solutions",
   description: "Generate software",
 };
 
@@ -88,86 +69,93 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
-
         <header className={styles.header}>
-
-            <div className="w-full mt-4 flow-root items-left align-left pt-5">
-              <div className="align-left w-75 items-left px-10">
-                <Logo className="align-left  items-left"/>
+          <div className="w-full p-4 md:p-6">
+            <div className="flex flex-col md:flex-row md:items-center md:justify-between">
+              <div className="mb-4 md:mb-0 px-8">
+                <Logo className="w-32 md:w-40 px-8" />
               </div>
-                <div className="w-full">
-                      <NavigationMenu>
-                        <NavigationMenuList>
-                          <NavigationMenuItem>
-                            <NavigationMenuTrigger>Features</NavigationMenuTrigger>
-                            <NavigationMenuContent>
-                              <ul className="grid gap-3 p-4 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
-                                <li className="row-span-3">
-                                  <NavigationMenuLink asChild>
-                                    <a
-                                      className="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-muted/50 to-muted p-6 no-underline outline-none focus:shadow-md"
-                                      href="/"
-                                    >
-                                      <div className="mb-2 mt-4 text-lg font-medium">
-                                        Solutions
-                                      </div>
-                                      <p className="text-sm leading-tight text-muted-foreground">
-                                        Components.
-                                      </p>
-                                    </a>
-                                  </NavigationMenuLink>
-                                </li>
-                                <ListItem href="/" title="Introduction">
-                                  Built using UI and CSS.
-                                </ListItem>
-                                <ListItem href="/" title="Build">
-                                  Software.
-                                </ListItem>
-                                <ListItem
-                                  href="/"
-                                  title="AI"
-                                >
-                                  UI
-                                </ListItem>
-                              </ul>
-                            </NavigationMenuContent>
-                          </NavigationMenuItem>
-                          <NavigationMenuItem>
-                            <NavigationMenuTrigger>Services</NavigationMenuTrigger>
-                            <NavigationMenuContent>
-                              <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
-                                {components.map((component) => (
-                                  <ListItem
-                                    key={component.title}
-                                    title={component.title}
-                                    href={component.href}
-                                  >
-                                    {component.description}
-                                  </ListItem>
-                                ))}
-                              </ul>
-                            </NavigationMenuContent>
-                          </NavigationMenuItem>
-                          <NavigationMenuItem>
-                            <Link href="/" legacyBehavior passHref>
-                              <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                                About us
-                              </NavigationMenuLink>
-                            </Link>
-                          </NavigationMenuItem>
-                        </NavigationMenuList>
-                      </NavigationMenu>
-                  </div>
-               </div>
+              <nav className="md:flex">
+                <input type="checkbox" id="menu-toggle" className="hidden" />
+                <label htmlFor="menu-toggle" className="md:hidden cursor-pointer">
+                  Menu ☰
+                </label>
+                <NavigationMenu className="hidden md:block">
+                  <NavigationMenuList>
+                    <NavigationMenuItem>
+                      <NavigationMenuTrigger>Features</NavigationMenuTrigger>
+                      <NavigationMenuContent>
+                        <ul className="grid gap-3 p-4 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
+                          <li className="row-span-3">
+                            <NavigationMenuLink asChild>
+                              <a
+                                className="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-muted/50 to-muted p-6 no-underline outline-none focus:shadow-md"
+                                href="/"
+                              >
+                                <div className="mb-2 mt-4 text-lg font-medium">
+                                  Software Solutions
+                                </div>
+                                <p className="text-sm leading-tight text-muted-foreground">
+                                  Under Construction
+                                </p>
+                              </a>
+                            </NavigationMenuLink>
+                          </li>
+                          <ListItem href="/" title="Chatbots implementation Solutions">
+                            Under Construction.
+                          </ListItem>
+                          <ListItem href="/" title="Predictive Solutions">
+                            Under Construction.
+                          </ListItem>
+                          <ListItem
+                            href="/"
+                            title="Artificial Intelligence Implementation solutions."
+                          >
+                            Under construction.
+                          </ListItem>
+                        </ul>
+                      </NavigationMenuContent>
+                    </NavigationMenuItem>
+                    <NavigationMenuItem>
+                      <NavigationMenuTrigger>Services</NavigationMenuTrigger>
+                      <NavigationMenuContent>
+                        <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
+                          {components.map((component) => (
+                            <ListItem
+                              key={component.title}
+                              title={component.title}
+                              href={component.href}
+                            >
+                              {component.description}
+                            </ListItem>
+                          ))}
+                        </ul>
+                      </NavigationMenuContent>
+                    </NavigationMenuItem>
+                    <NavigationMenuItem>
+                      <Link href="/blog" legacyBehavior passHref>
+                        <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                          Blog
+                        </NavigationMenuLink>
+                      </Link>
+                    </NavigationMenuItem>
+                      <NavigationMenuItem>
+                      <Link href="/contact" legacyBehavior passHref>
+                        <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                          Contact
+                        </NavigationMenuLink>
+                      </Link>
+                    </NavigationMenuItem>
+                  </NavigationMenuList>
+                </NavigationMenu>
+              </nav>
+            </div>
+          </div>
         </header>
         {children}
 
-
-
-    <script src="https://cdn.botpress.cloud/webchat/v2.2/inject.js"></script>
-    <script src="https://files.bpcontent.cloud/2025/01/17/12/20250117125925-XICVVD6W.js"></script>
-
-
+            <script src="https://cdn.botpress.cloud/webchat/v2.2/inject.js"></script>
+            <script src="https://files.bpcontent.cloud/2025/01/17/12/20250117125925-XICVVD6W.js"></script>
 
       </body>
     </html>
@@ -199,3 +187,4 @@ const ListItem = React.forwardRef<
   );
 });
 ListItem.displayName = "ListItem";
+

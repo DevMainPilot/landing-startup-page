@@ -95,3 +95,26 @@ a {
     @apply bg-background text-foreground;
   }
 }
+
+
+/* Custom styles for responsive navigation */
+@media (max-width: 768px) {
+  #menu-toggle:checked ~ .hidden {
+    display: block;
+  }
+
+  #menu-toggle:checked ~ label {
+    color: #888;
+  }
+
+  .NavigationMenuContent {
+    position: static;
+    width: 100%;
+  }
+
+  .NavigationMenuContent ul {
+    width: 100% !important;
+  }
+}
+
+

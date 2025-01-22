@@ -16,13 +16,15 @@ import { Card, CardContent } from "@/components/ui/card";
 
 import { ArrowRight, Zap, Target, Rocket } from "lucide-react";
 
+interface ExplanationItemProps { icon: React.ReactNode; title: string; description: string; }
+
 export default function Home() {
   return (
     <div className={styles.page}>
       <main className={styles.main}>
         <div className="bg-gradient-to-b from-blue-900 via-blue-700 to-blue-500 flex items-center justify-center">
-          <div className=" mx-auto flex flex-col md:flex-row items-center gap-8">
-            <div className="flex-1 text-white p-10">
+          <div className=" mx-auto flex flex-col md:flex-row items-center p-10 ">
+            <div className="flex-1 text-white">
               <h1 className="text-4xl md:text-5xl font-bold mb-4">
                 Launching Soon: Your Custom Software Innovators
               </h1>
@@ -49,14 +51,15 @@ export default function Home() {
           <Carousel
             opts={{
               align: "start",
+              loop: true,
             }}
-            className="w-full max-w-sm"
+            className="w-full max-w-xs sm:max-w-2xl lg:max-w-4xl"
           >
-            <CarouselContent>
+            <CarouselContent className="-ml-2 md:-ml-4">
               {Array.from({ length: 5 }).map((_, index) => (
                 <CarouselItem
                   key={index}
-                  className="md:basis-1/2 lg:basis-1/2 py-2"
+                  className="sd:basis-1/3 md:basis-1/3 lg:basis-1/3 py-2"
                 >
                   <div className="p-1">
                     <Card>
@@ -65,25 +68,34 @@ export default function Home() {
                           <Image
                             src={`/carousel_${index + 1}.png`}
                             alt="Placeholder Image"
-                            width={600}
-                            height={600}
+                            width={200}
+                            height={400}
                             className="rounded-lg shadow-lg"
                           />
                         </div>
                         <div className="text-center mb-4">
-                          {index === 1 ? (
+                          {index === 0 ? (
                             <span className="text-l font-semibold">
-                              {"AI coding experts"}
+                              {"AI coding"}
                             </span>
-                          ) : index === 2 ? (
+                          ) : index === 1 ? (
                             <span className="text-l font-semibold">
                               {"Secure auth"}
                             </span>
+                          ) : index === 2 ? (
+                            <span className="text-l font-semibold">
+                              {"Application development"}
+                            </span>
+                          ) : index === 3 ? (
+                            <span className="text-l font-semibold">
+                              {"Business Analytics"}
+                            </span>
                           ) : (
                             <span className="text-l font-semibold">
-                              {"Cloud solutions"}
+                              {"Chatbot helper Assistance"}
                             </span>
-                          )}
+                          )
+                        }
                         </div>
                       </CardContent>
                     </Card>
@@ -183,11 +195,11 @@ export default function Home() {
           <div className={styles.ctas}>
             <a
               className={styles.primary}
-              href="/"
+              href="https://github.com/DevMainPilot"
               target="_blank"
               rel="noopener noreferrer"
             >
-              Linkedin
+              Github
             </a>
             <a
               href="/"
@@ -195,7 +207,7 @@ export default function Home() {
               rel="noopener noreferrer"
               className={styles.primary}
             >
-              Github
+              Home
             </a>
           </div>
         </div>
@@ -203,7 +215,7 @@ export default function Home() {
 
       <footer className={styles.footer}>
         <a
-          href="/"
+          href="/blog"
           target="_blank"
           rel="noopener noreferrer"
         >
@@ -231,7 +243,7 @@ export default function Home() {
           Team
         </a>
         <a
-          href="/"
+          href="/contact"
           target="_blank"
           rel="noopener noreferrer"
         >
@@ -242,14 +254,15 @@ export default function Home() {
             width={16}
             height={16}
           />
-          Contact →
+          Contact → newbotsforall@gmail.com
         </a>
       </footer>
     </div>
   );
 }
 
-function ExplanationItem({ icon, title, description }) {
+function ExplanationItem({ icon, title, description }: ExplanationItemProps) {
+
   return (
     <div className="flex items-start">
       <div className="flex-shrink-0">
