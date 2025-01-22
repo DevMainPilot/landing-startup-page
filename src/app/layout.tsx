@@ -161,6 +161,14 @@ export default function RootLayout({
                </div>
         </header>
         {children}
+
+
+
+    <script src="https://cdn.botpress.cloud/webchat/v2.2/inject.js"></script>
+    <script src="https://files.bpcontent.cloud/2025/01/17/12/20250117125925-XICVVD6W.js"></script>
+
+
+
       </body>
     </html>
   );
