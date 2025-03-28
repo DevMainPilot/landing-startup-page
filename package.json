@@ -1,6 +1,6 @@
 {
   "name": "startup-landing-app",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -8,25 +8,28 @@
     "start": "node .next/standalone/server.js"
   },
   "dependencies": {
-    "@radix-ui/react-navigation-menu": "^1.2.3",
-    "@radix-ui/react-slot": "^1.1.1",
+    "@formatjs/intl-localematcher": "^0.6.1",
+    "@radix-ui/react-navigation-menu": "^1.2.5",
+    "@radix-ui/react-slot": "^1.1.2",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
-    "embla-carousel-react": "^8.5.1",
+    "embla-carousel-react": "^8.5.2",
     "lucide-react": "^0.468.0",
+    "negotiator": "^1.0.0",
     "next": "15.1.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "tailwind-merge": "^2.5.5",
+    "tailwind-merge": "^2.6.0",
     "tailwindcss-animate": "^1.0.7"
   },
   "devDependencies": {
-    "@types/node": "^20",
-    "@types/react": "^19",
-    "@types/react-dom": "^19",
-    "autoprefixer": "^10.4.20",
-    "postcss": "^8.4.49",
-    "tailwindcss": "^3.4.16",
-    "typescript": "^5"
-  }
+    "@types/node": "^20.17.28",
+    "@types/react": "^19.0.12",
+    "@types/react-dom": "^19.0.4",
+    "autoprefixer": "^10.4.21",
+    "postcss": "^8.5.3",
+    "tailwindcss": "^3.4.17",
+    "typescript": "^5.8.2"
+  },
+  "packageManager": "pnpm@10.2.1+sha512.398035c7bd696d0ba0b10a688ed558285329d27ea994804a52bad9167d8e3a72bcb993f9699585d3ca25779ac64949ef422757a6c31102c12ab932e5cbe5cc92"
 }

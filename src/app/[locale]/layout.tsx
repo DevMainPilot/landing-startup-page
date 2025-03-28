@@ -7,6 +7,12 @@ import { cn } from "@/lib/utils";
 import styles from "./page.module.css";
 import { Logo } from "@/components/ui/logo";
 
+// i18n
+import Nav from '@/components/nav';
+
+// i18n
+import { Locale, i18nConfig } from '@/i18n';
+
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -61,16 +67,40 @@ export const metadata: Metadata = {
   description: "Generate software",
 };
 
-export default function RootLayout({
-  children,
-}: Readonly<{
+
+// i18n
+export async function generateStaticParams() {
+  return i18nConfig.locales.map((locale: Locale) => ({ locale: locale }));
+}
+
+// i18n
+type Props = {
   children: React.ReactNode;
+  params: {
+    locale: Locale;
+  };
+};
+
+export default function RootLayout({
+  children, params
+}: Readonly<{
+    children: React.ReactNode;
+    params: {
+        locale: Locale ;
+     };
 }>) {
+
   return (
-    <html lang="en">
+
+    // i18n
+    <html lang={params.locale}>
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
+
         <header className={styles.header}>
           <div className="w-full p-4 md:p-6">
+
+            <Nav locale={ params.locale} />
+
             <div className="flex flex-col md:flex-row md:items-center md:justify-between">
               <div className="mb-4 md:mb-0 px-8">
                 <Logo className="w-32 md:w-40 px-8" />

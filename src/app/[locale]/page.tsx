@@ -1,4 +1,3 @@
-"use client";
 
 import Image from "next/image";
 import styles from "./page.module.css";
@@ -18,14 +17,28 @@ import { ArrowRight, Zap, Target, Rocket } from "lucide-react";
 
 interface ExplanationItemProps { icon: React.ReactNode; title: string; description: string; }
 
-export default function Home() {
+import { Locale } from '@/i18n';
+import { getTranslation } from '@/lib/i18n/getTranslation';
+
+type Props = {
+  params: {
+    locale: Locale;
+  };
+};
+
+export default async function Home({ params: { locale } }: Props) {
+
+  const translation = await getTranslation(locale);
+
   return (
+
     <div className={styles.page}>
       <main className={styles.main}>
         <div className="bg-gradient-to-b from-blue-900 via-blue-700 to-blue-500 flex items-center justify-center">
           <div className=" mx-auto flex flex-col md:flex-row items-center p-10 ">
             <div className="flex-1 text-white">
               <h1 className="text-4xl md:text-5xl font-bold mb-4">
+               {translation('views.home.title')}
                 Launching Soon: Your Custom Software Innovators
               </h1>
               <p className="text-xl md:text-2xl">
@@ -256,6 +269,7 @@ export default function Home() {
           />
           Contact → newbotsforall@gmail.com
         </a>
+        <div> v0.2.0</div>
       </footer>
     </div>
   );
