@@ -66,4 +66,6 @@ This template can be used to deploy your Next.js application as a Docker contain
    - You must replace `PROJECT-ID` with your Google Cloud Project ID.
    - You may replace `us-central1` with a different Google Cloud [region](https://cloud.google.com/run/docs/locations).
 
+Example: gcloud run deploy kabots-page --source=. --project=kabots-page --region=europe-west1 --allow-unauthenticated
+
 For more information, see the Next.js [deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying#self-hosting).
